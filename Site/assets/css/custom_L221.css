@@ -6,3 +6,17 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+.robin {
+  transform: rotateZ(10deg) scaleX(0.8) scaleY(0.8);
+  transition-property: transform, background;
+  transition-duration: 1s, 2s;
+  transition-delay: 0s, 0s;
+  transition-timing-function: linear;
+  position: relative;
+}
+
+.robin:hover {
+  transform: rotateZ(-10deg) scaleX(1) scaleY(1);
+  background: #0ab253;
+}
