@@ -1,3 +1,5 @@
+/* Reset CSS */
+
 *,
 *:after,
 *:before {
@@ -6,6 +8,8 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+/* Robin : Transform/transition */
 
 .robin {
   transform: rotateZ(10deg) scaleX(0.8) scaleY(0.8);
