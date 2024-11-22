@@ -178,8 +178,8 @@ footer {
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* transitions */
 }
 
-/* Survol des liens du footer : Légère mise en valeur et rotation */
-/* Utilisation de `scale` et `rotate` : Concepts détaillés sur DeSandro et W3Schools */
+/* Survol des liens du footer  mise en valeur et rotation */
+/* Utilisation de `scale` et `rotate` je me suis aidé de DeSandro et W3Schools */
 .footer-link:hover {
   background-color: rgba(255, 215, 0, 0.8); /* fond doré  */
   color: #000; /* Texte noir */
