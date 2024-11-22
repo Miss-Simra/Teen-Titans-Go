@@ -9,7 +9,7 @@
   scroll-behavior: smooth;
 }
 
-/* Robin : Transform/transition */
+/* Robin : transform/transition */
 
 .robin {
   transform: rotateZ(10deg) scaleX(0.8) scaleY(0.8);
