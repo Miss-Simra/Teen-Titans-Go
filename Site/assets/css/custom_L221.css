@@ -24,3 +24,164 @@
   transform: rotateZ(-10deg) scaleX(1) scaleY(1);
   background: #0ab253;
 }
+
+
+
+/* **Images de Starfire et Raven** */
+
+/* Pour Starfire ajout d'une animation */
+.starfire {
+  max-width: 35%; 
+  margin: 2rem auto; 
+  border: 3px solid rgb(222, 75, 144); /* bordure rose */
+  border-radius: 10px; 
+  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out; /* transitions pour zoom et ombre */
+}
+
+/* Pour Raven zoom avant-arrière avec effet d'oscillation */
+.raven {
+  max-width: 35%; 
+  margin: 2rem auto; 
+  border: 3px solid rgb(138, 43, 226); /* bordure rose */
+  border-radius: 10px; 
+  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out; /* transitions pour zoom et ombre */
+}
+
+/* Effet au survol des images Starfire zoom et rotation */
+.starfire:hover {
+  transform: scale(1.2) rotate(5deg); /* agrandissement et rotation */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* ombre  */
+}
+
+/* Effet au survol des images Raven léger zoom avant-arrière oscillation */
+.raven:hover {
+  transform: scale(1.1) translateY(-10px); /* augmentation avec translation verticale */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* ombre  */
+}
+
+/* **Descriptions Starfire et Raven** */
+/* Bloc de texte avec un fond discret et un effet 3D (rotation Y au survol). */
+/* Utilisation de `perspective` et `transform: rotateY()` inspirée des ressources de David DeSandro */
+
+.article-dark.starfire-description, .article-dark.raven-description {
+  font-size: 1rem; 
+  line-height: 1.8; 
+  margin: 1rem auto; 
+  padding: 1.5rem; 
+  position: relative; /* pour l'animation */
+  background: rgba(0, 0, 0, 0.1); /* quasi transparent */
+  border-radius: 10px; 
+  perspective: 1000px; /* perspective pour un effet 3D */
+  transition: transform 0.4s ease-in-out, background 0.3s ease-in-out; /* transition pour rotation et changement de fond */
+}
+
+/* Effet au survol Rotation en Y et changement de fond */
+.article-dark.starfire-description:hover, 
+.article-dark.raven-description:hover {
+  transform: rotateY(15deg); /* rotation en 3D */
+  background: rgba(222, 75, 144, 0.2); /* fond rose  */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* ombre */
+}
+
+/* **Effet 3D sur le texte de l'article** */
+/* effet 3D au survol du texte dans l'élément .article */
+.article {
+  font-size: 1.2rem; 
+  line-height: 1.8; 
+  margin: 1rem 0; 
+  padding: 1rem; 
+  display: inline-block; /* animation sur chaque mot */
+  transition: transform 0.4s ease, text-shadow 0.4s ease; /* transition  */
+  color: #333; 
+  perspective: 800px; /* perspective pour un effet 3D */
+}
+
+/* Ajout de la rotation 3D au survol */
+.article:hover {
+  transform: rotateY(15deg) rotateX(5deg); /* rotation en 3D */
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* ombre */
+}
+
+/* **Bouton Lien** */
+/* fond vert forêt et transition sur le survol. */
+/* Transition et rebond inspiré des exemples W3Schools */
+.link {
+  color: #ffffff; 
+  text-decoration: none; 
+  text-align: center; 
+  font-family: "Roboto", sans-serif; 
+  font-size: 1.6rem; 
+  background-color: rgba(34, 139, 34, 0.8); /* fond vert  */
+  padding: 2rem 4rem; 
+  border-radius: 1rem; 
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* transitions */
+}
+
+/* Survol du bouton effet de rebond */
+.link:hover {
+  background-color: rgba(144, 238, 144, 0.8); /* vert  */
+  color: #000; 
+  transform: translateY(-5px); /* déplacement  */
+}
+
+/* **Séparateur de Page 3** */
+/* effet de fondu à l'apparition */
+/* Animation fade-in  inspiré des animations `@keyframes` vues sur WebDevSimplified */
+#page-separator-three {
+  background-image: url("../images/Image7.jpg"); 
+  filter: brightness(0.8); /* luminosité */
+  position: relative; /* pour l'animation */
+  height: 100vh; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.5s ease-in-out; /* animation de fondu */
+}
+
+/* Définition de l'animation de fondu */
+@keyframes fadeIn {
+  from {
+    opacity: 0; 
+    transform: translateY(20px); /* décalage */
+  }
+  to {
+    opacity: 1; 
+    transform: translateY(0); /* retour à la position de base */
+  }
+}
+
+/* **Footer** */
+/* Pied de page image de fond et transitions sur les liens */
+/* Utilisation des concepts de `background-attachment: fixed` pour l'effet parallaxe */
+footer {
+  background-image: url("../images/Image2.jpg"); 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  background-attachment: fixed; 
+  background-size: cover; 
+  height: 100vh; /* hauteur  */
+  display: flex; /* centrage  */
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+}
+
+/* Lien dans le footer avec transitions et effets */
+.footer-link {
+  color: rgb(255, 255, 255); /* blanc */
+  text-decoration: none; 
+  font-family: "Roboto", sans-serif; 
+  font-size: 1.8rem; 
+  background-color: rgba(0, 0, 0, 0.7); 
+  padding: 2rem 4rem; 
+  border-radius: 1rem; 
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* transitions */
+}
+
+/* Survol des liens du footer : Légère mise en valeur et rotation */
+/* Utilisation de `scale` et `rotate` : Concepts détaillés sur DeSandro et W3Schools */
+.footer-link:hover {
+  background-color: rgba(255, 215, 0, 0.8); /* fond doré  */
+  color: #000; /* Texte noir */
+  transform: scale(1.05) rotate(-2deg); /* agrandissement et rotation */
+}
