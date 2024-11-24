@@ -100,17 +100,6 @@ h2 {
   text-align: center;
 }
 
-.h2-intro {
-  font-family: "Poppins", sans-serif;
-  color: rgb(222, 75, 144);
-  margin-bottom: 2rem;
-  text-align: center;
-  font-weight: 700;
-  font-size: 2.2rem;
-  text-align: center;
-  border: none;
-}
-
 h3 {
   font-size: 1.8rem;
   text-align: center;
@@ -243,7 +232,7 @@ header {
 
 .page-article-dark {
   background-color: #e5e5e572;
-  height: 400vh;
+  height: 460vh;
   display: flex;
   align-items: center;
   text-align: center;

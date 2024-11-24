@@ -9,48 +9,42 @@
   scroll-behavior: smooth;
 }
 
-/* Test 3D Animation */
-
-@keyframes tipsy {
-  0% {
-    transform: translateX(-50%) translateY(-50%) rotate(0deg);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-50%) rotate(360deg);
-  }
-}
+/* H1 : Cadre 3D Animation */
 
 h1 {
   position: relative;
-  font-size: 3em;
-  text-align: center;
   margin: 0;
-  padding: 1em;
+  padding: 3rem;
+  perspective: 1000px;
 }
 
 h1:before,
 h1:after {
   content: "";
-  padding: 0.9em 0.4em;
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 100%;
-  display: block;
+  width: 95%;
+  height: 100%;
   border: 15px solid #000000;
-  transform: translateX(-50%) translateY(-50%) rotate(0deg);
-  transform-origin: center;
-  animation: tipsy 10s infinite alternate ease-in-out;
+  animation: tipsy 10s infinite alternate ease-in-out; /* Animation tipsy : dure 10sec (lent - rapide - lent), se répète à l'infini en alternant le sens */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.363);
 }
 
-h1:before {
-  border-color: 15px solid #d9524a #d9524a rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-  z-index: -1;
+h1:hover:before,
+h1:hover:after {
+  animation-play-state: paused;
 }
 
-h1:after {
-  border-color: 15px solid rgba(0, 0, 0, 0) rgba(0, 0, 0, 0.466) #d9524a #d9524a;
-  box-shadow: 25px 25px 25px rgba(46, 46, 49, 0.329);
+@keyframes tipsy {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotateY(0deg);
+    /* Déplace l'élément avec translate afin de le centrer sans rotation */
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotateY(360deg);
+    /* Déplace l'élément avec translate afin de le centrer avec une rotation de 360 deg (tour entier)*/
+  }
 }
 
 /* Header */
@@ -83,6 +77,58 @@ h2 {
   padding: 1rem;
 }
 
+/* P intro */
+
+.p-intro {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: transparent;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transform: perspective(800px) rotateY(25deg) scale(0.9) rotateX(10deg); /* Perspective effet 3D - Rotation 25 deg -> incline vers la droite - Réduction de la taille 90% - Rotation 10 deg -> incline vers le bas  */
+  filter: blur(2px); /* Filtre flou 2px */
+  opacity: 0.5; /* Opacité du flou */
+  transition: 0.6s ease all; /* Transition : 0.6sec (lent (début) - rapide (milieu) - même vitesse (fin)) à toutes les propriétés modifiées */
+  margin-top: 2.5rem;
+}
+
+.p-intro:hover {
+  transform: perspective(800px) rotateY(-15deg) translateY(-50px) rotateX(10deg)
+    scale(1);
+  /* Perspective effet 3D - Rotation -15 deg (vertical) -> déplace vers la gauche - Translate -> déplace de 50 pixels vers le haut - Rotation 10 deg (horizontal) -> incliné vers l'avant - Taille 100% */
+  filter: blur(0);
+  opacity: 1;
+}
+
+@keyframes titans {
+  0% {
+    background-position: 0 0;
+    /* Placé au bord gauche de l'image */
+  }
+  50% {
+    background-position: 200px;
+    /* Déplace l'image de 200 pixels vers la droite -> l'axe X (horizontale)*/
+  }
+  100% {
+    background-position: 0 0;
+    /* Revient à sa position initiale */
+  }
+}
+
+#titans {
+  background-image: url("https://wallpaper.dog/large/20579606.jpg");
+  background-size: contain;
+  background-clip: text;
+  /* Image visible par rapport au texte */
+  -webkit-background-clip: text;
+  animation-name: titans;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
 /* Robin : transform/transition */
 
 .robin {
@@ -113,8 +159,8 @@ h2 {
 .changelin:hover {
   max-width: 25%;
   transform: scaleX(0.9) scaleY(0.9);
-  -webkit-filter: grayscale(0) blur(1px);
-  filter: grayscale(0) blur(1px);
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
 }
 
 /* Cyborg : transform/transition  */
@@ -130,6 +176,87 @@ h2 {
   width: 100%;
   height: 100%;
   margin-left: -30px;
+}
+
+/* Article : Robin, Changelin, Cyborg */
+
+.article-dark {
+  color: #000000;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.1); /* Bg presque transparent */
+  border-radius: 10px;
+  perspective: 1000px; /* perspective effet 3D */
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.article-dark.robin-description:hover {
+  background: #f4e80095;
+  border-radius: 10px;
+  perspective: 1000px; /* Perspective effet 3D */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.153); /* Ombre  */
+}
+
+.article-dark.changelin-description:hover {
+  background: #a3e94dc9;
+  border-radius: 10px;
+  perspective: 1000px; /* Perspective effet 3D */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.153); /* Ombre  */
+}
+
+.article-dark.cyborg-description:hover {
+  background: #74d7e8d1;
+  border-radius: 10px;
+  perspective: 1000px; /* Perspective effet 3D */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.153); /* Ombre  */
+}
+
+@keyframes elasticMove {
+  0% {
+    transform: scale(0.9) rotate(0deg); /* Position initiale */
+  }
+  25% {
+    transform: scale(1) rotate(-2deg); /* Premier rebond */
+  }
+  50% {
+    transform: scale(0.9) rotate(2deg); /* Mouvement de l'autre côté */
+  }
+  75% {
+    transform: scale(1) rotate(-2deg); /* Rebond intermédiaire */
+  }
+  100% {
+    transform: scale(0.9) rotate(0deg); /* Retour à la position de départ */
+  }
+}
+
+/* Animation souplesse : Robin - Changelin - Cyborg */
+
+.robin-description:hover {
+  animation: elasticMove 4s ease-in-out infinite alternate;
+  /* Animation elasticMove au survol : 4sec (lent (début) - rapide (milieu) - raltentissement (fin) ) - se répète à l'infini - alterné (agrandissement - rétrécissement)  */
+}
+
+.changelin-description:hover {
+  animation: elasticMove 4s ease-in-out infinite alternate;
+}
+
+.cyborg-description:hover {
+  animation: elasticMove 4s ease-in-out infinite alternate;
+}
+
+@keyframes bounceText {
+  0% {
+    transform: scale(1) translateX(100%); /* Commence à droite */
+  }
+  50% {
+    transform: scale(1.05) translateX(-10px); /* Mouvement vers la gauche */
+  }
+  100% {
+    transform: scale(1) translateX(-100%); /* Continue à gauche sans revenir */
+  }
 }
 
 /* **Images de Starfire et Raven** */
@@ -182,10 +309,16 @@ h2 {
 }
 
 /* Effet au survol Rotation en Y et changement de fond */
-.article-dark.starfire-description:hover,
-.article-dark.raven-description:hover {
+.article-dark.starfire-description:hover {
   transform: rotateY(15deg); /* rotation en 3D */
   background: rgba(222, 75, 144, 0.2); /* fond rose  */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* ombre */
+}
+
+/* Effet au survol Rotation en Y et changement de fond */
+.article-dark.raven-description:hover {
+  transform: rotateY(15deg); /* rotation en 3D */
+  background: rgba(95, 75, 222, 0.2); /* fond violet  */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* ombre */
 }
 
