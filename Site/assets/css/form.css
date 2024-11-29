@@ -37,6 +37,10 @@
   flex-direction: column;
 }
 
+.form-row > label {
+  margin: 1rem;
+}
+
 input,
 textarea,
 select {
@@ -106,7 +110,9 @@ input[type="checkbox"] {
 }
 
 /* Animation des champs au survol */
-input:hover, textarea:hover, select:hover {
+input:hover,
+textarea:hover,
+select:hover {
   animation: pulse 0.6s infinite alternate; /* Applique un effet  */
 }
 
@@ -123,4 +129,26 @@ input:hover, textarea:hover, select:hover {
   #interactive-form {
     grid-template-columns: 1fr;
   }
+}
+
+/* Vidéo du formulaire et boutons */
+
+#myVideo {
+  display: flex;
+  grid-column: span 2; /* prend toute la largeur */
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+}
+
+iframe {
+  border: none; /* Pas de bordure */
+}
+
+#myButton2 {
+  grid-column: span 2; /* prend toute la largeur */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
