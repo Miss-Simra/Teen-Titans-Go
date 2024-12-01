@@ -142,6 +142,24 @@ select:hover {
   margin: 2rem;
 }
 
+#myVideo iframe {
+  transform: perspective(750px) translate3d(0px, 0px, -250px) rotateX(27deg)
+    scale(0.9, 0.9);
+  /* Perspective -> effet de profondeur - Translate3D : déplace la video vers l'arrière - RotateX : Incline la vidéo - Scale - Réduit la taille de la vidéo à 90% */
+  border-radius: 5px; /* Arrondissement bordure */
+  border: none; /* Pas de bordure */
+  box-shadow: 0 70px 40px -20px rgba(0, 0, 0, 0.2); /* Ombre */
+  transition: 0.4s ease-in-out transform; /* Transition fluide 0.4s (lent - rapide - ralentissement) qui s'applique au transform */
+
+  &:hover {
+    transform: translate3d(
+      0px,
+      0px,
+      -250px
+    ); /* Au survol de la vidéo, l'effet translate3D donne l'impression d'un rapprochement de la vidéo */
+  }
+}
+
 iframe {
   border: none; /* Pas de bordure */
 }
@@ -151,4 +169,46 @@ iframe {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Illusion bouton 2 effet 3D */
+
+#myButton2 > button {
+  --c: #de4b90; /* Couleur */
+  --b: 0.2em; /* Largeur de la bordure */
+  --d: 20px; /* Profondeur du cube */
+  --_s: calc(var(--d) + var(--b));
+  /* Calcul qui pemret de savoir la somme de la prodonfeur du cube et de la largeur de la bordure */
+  color: var(--c); /* Applique la couleur c au texte */
+  border: solid #de4b90; /* Bordure rose */
+  border-width: var(--b) var(--b) var(--_s) var(--_s); /* Bordure asymétrique */
+  background: conic-gradient(
+    at left var(--d) bottom var(--d),
+    white 0deg 90deg /* Fond blanc */
+  );
+
+  transform: translate(calc(var(--d) / -1), var(--d));
+  /* Déplacement vers la gauche et vers le bas afin de créer un effet de profondeur */
+
+  clip-path: polygon(
+    /* Découpe le bouton en polygone */ var(--d) 0%,
+    var(--d) 0%,
+    100% 0%,
+    100% calc(100% - var(--d)),
+    100% calc(100% - var(--d)),
+    var(--d) calc(100% - var(--d))
+  );
+  transition: 0.5s; /* Transition progressive */
+}
+#myButton2 > button:hover {
+  transform: translate(0, 0); /* Revient à sa position d'origine */
+  /* Créer le polygone et l'effet de profondeur */
+  clip-path: polygon(
+    0% var(--d),
+    var(--d) 0%,
+    100% 0%,
+    100% calc(100% - var(--d)),
+    calc(100% - var(--d)) 100%,
+    0% 100%
+  );
 }
