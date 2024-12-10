@@ -424,3 +424,42 @@ footer {
   color: #000; /* Texte noir */
   transform: scale(1.05) rotate(-2deg); /* agrandissement et rotation */
 }
+
+
+
+
+
+
+
+/* Personnalisation des champs de saisie */
+.custom-input {
+  font-family: "Roboto", sans-serif;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+  font-size: 1rem;
+  transition: all 0.3s ease; 
+}
+
+.custom-input:focus {
+  border-color: #de4b90;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Bouton personnalisé */
+.custom-btn {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #de4b90;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.custom-btn:hover {
+  background-color: #fff;
+  color: #de4b90;
+  transform: scale(1.05);
+}
