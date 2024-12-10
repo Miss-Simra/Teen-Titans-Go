@@ -268,127 +268,75 @@
 
     <!-- Fin présentation musique -->
 
-    <!-- Section formulaire -->
+<!-- Début de la section formulaire -->
+<section id="form_UE_L221" class="container py-5">
+  <!-- Titre principal du formulaire -->
+  <h2 class="text-center text-white mb-5">Rejoignez l'équipe des Titans !</h2>
 
-    <section id="form_UE_L221" class="container py-5">
-      <h2 class="text-center text-white mb-5">
-        Rejoignez l'équipe des Titans !
-      </h2>
-      <form id="interactive-form">
-        <div class="row g-4 mb-3">
-          <!-- Ajout de g-4 pour espacement entre les éléments -->
-          <!-- Nom complet -->
-          <div class="col-md-6">
-            <label for="nom" class="form-label text-white">Nom complet</label>
-            <input
-              type="text"
-              id="nom"
-              name="nom"
-              placeholder="Votre nom"
-              class="form-control custom-input"
-              required
-            />
-          </div>
-          <!-- Email -->
-          <div class="col-md-6">
-            <label for="email" class="form-label text-white">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Votre email"
-              class="form-control custom-input"
-              required
-            />
-          </div>
-        </div>
+  <!-- Début du formulaire -->
+  <form id="interactive-form">
 
-        <div class="row g-4 mb-4">
-          <!-- Message -->
-          <div class="col-12">
-            <label for="message" class="form-label text-white"
-              >Pourquoi voulez-vous rejoindre ?</label
-            >
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              placeholder="Votre message"
-              class="form-control custom-input"
-            ></textarea>
-          </div>
-        </div>
+    <!-- Première ligne avec deux colonnes pour nom et email -->
+    <div class="row g-4 mb-3"> <!-- g-4 ajoute un espacement entre les colonnes -->
+      <!-- Champ pour le nom complet -->
+      <div class="col-md-6">
+        <label for="nom" class="form-label text-white">Nom complet</label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom" class="form-control custom-input" required>
+      </div>
+      <!-- Champ pour l'email -->
+      <div class="col-md-6">
+        <label for="email" class="form-label text-white">Email</label>
+        <input type="email" id="email" name="email" placeholder="Votre email" class="form-control custom-input" required>
+      </div>
+    </div>
 
-        <div class="row g-4 mb-3">
-          <!-- Super-pouvoir -->
-          <div class="col-12">
-            <label for="superpouvoir" class="form-label text-white"
-              >Votre super-pouvoir</label
-            >
-            <select
-              id="superpouvoir"
-              name="superpouvoir"
-              class="form-select custom-input"
-            >
-              <option value="force_robin">Force tactique (comme Robin)</option>
-              <option value="transformation_changelin">
-                Transformation animale (comme Changelin)
-              </option>
-              <option value="technologie_cyborg">
-                Fusion avec la technologie (comme Cyborg)
-              </option>
-              <option value="laser_starfire">
-                Projectiles d'énergie (comme Starfire)
-              </option>
-              <option value="magie_raven">Magie obscure (comme Raven)</option>
-              <option value="autre">Autre...</option>
-            </select>
-          </div>
-        </div>
+    <!-- Deuxième ligne : champ de texte pour le message -->
+    <div class="row g-4 mb-4">
+      <div class="col-12">
+        <label for="message" class="form-label text-white">Pourquoi voulez-vous rejoindre ?</label>
+        <textarea id="message" name="message" rows="4" placeholder="Votre message" class="form-control custom-input"></textarea>
+      </div>
+    </div>
 
-        <div class="row g-4 mb-3">
-          <!-- RGPD -->
-          <div class="col-12 d-flex align-items-center">
-            <input
-              type="checkbox"
-              id="rgpd"
-              name="rgpd"
-              class="me-2"
-              required
-            />
-            <label for="rgpd" class="text-white"
-              >J'accepte la politique de confidentialité (RGPD)</label
-            >
-          </div>
-        </div>
+    <!-- Troisième ligne : menu déroulant pour le super-pouvoir -->
+    <div class="row g-4 mb-3">
+      <div class="col-12">
+        <label for="superpouvoir" class="form-label text-white">Votre super-pouvoir</label>
+        <select id="superpouvoir" name="superpouvoir" class="form-select custom-input">
+          <option value="force_robin">Force tactique (comme Robin)</option>
+          <option value="transformation_changelin">Transformation animale (comme Changelin)</option>
+          <option value="technologie_cyborg">Fusion avec la technologie (comme Cyborg)</option>
+          <option value="laser_starfire">Projectiles d'énergie (comme Starfire)</option>
+          <option value="magie_raven">Magie obscure (comme Raven)</option>
+          <option value="autre">Autre...</option>
+        </select>
+      </div>
+    </div>
 
-        <div class="page">
-          <div class="container">
-            <img
-              id="img_form"
-              src="assets/images/img-form.png"
-              alt="decoration"
-            /><!-- Ajout de la vidéo -->
-            <div id="myVideo" class="col-12 my-4" style="display: none"></div>
-          </div>
-        </div>
+    <!-- Quatrième ligne : case à cocher pour accepter les conditions RGPD -->
+    <div class="row g-4 mb-3">
+      <div class="col-12 d-flex align-items-center">
+        <input type="checkbox" id="rgpd" name="rgpd" class="me-2" required>
+        <label for="rgpd" class="text-white">J'accepte la politique de confidentialité (RGPD)</label>
+      </div>
+    </div>
 
-        <div class="row">
-          <div class="col-12 text-center">
-            <button type="submit" class="btn btn-primary custom-btn">
-              Rejoindre les Titans
-            </button>
-          </div>
-        </div>
-        <!-- Ajout bouton 1 -->
-        <div id="myButton1" class="form-row"></div>
-        <!-- Ajout bouton 2 -->
-        <div id="myButton2" style="display: none"></div>
-      </form>
-    </section>
+    <!-- Bouton d'envoi -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary custom-btn">Rejoindre les Titans</button>
+      </div>
+    </div>
+  </form>
 
-    <!-- Fin du formulaire -->
+  <!-- Vidéo de présentation (responsive avec max-width) -->
 
+  <video controls class="w-100" style="max-width: 700px; margin: 0 auto; display: block;">
+    <source src="assets/video/video.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la lecture de vidéos.
+  </video>
+</section>
+<!-- Fin de la section formulaire -->
     <!-- Footer -->
 
     <footer>
