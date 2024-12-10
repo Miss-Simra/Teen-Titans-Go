@@ -270,81 +270,64 @@
 
     <!-- Section formulaire -->
 
-    <section id="form_UE_L221">
-      <h2>Rejoignez l'équipe des Titans !</h2>
+       <section id="form_UE_L221" class="container py-5">
+      <h2 class="text-center text-white mb-5">Rejoignez l'équipe des Titans !</h2>
       <form id="interactive-form">
-        <!-- Ligne 1 -->
-        <div class="form-row">
-          <!-- element de consigne 1 -->
-          <label for="nom">Nom complet </label>
-          <!-- element de consigne 2-->
-          <input
-            type="text"
-            id="nom"
-            name="nom"
-            placeholder="Votre nom"
-            required
-          />
-          <!-- element de consigne 3 -->
+        <div class="row g-4 mb-3"> <!-- Ajout de g-4 pour espacement entre les éléments -->
+          <!-- Nom complet -->
+          <div class="col-md-6">
+            <label for="nom" class="form-label text-white">Nom complet</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom" class="form-control custom-input" required>
+          </div>
+          <!-- Email -->
+          <div class="col-md-6">
+            <label for="email" class="form-label text-white">Email</label>
+            <input type="email" id="email" name="email" placeholder="Votre email" class="form-control custom-input" required>
+          </div>
         </div>
-        <div class="form-row">
-          <label for="email">Email </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Votre email"
-            required
-          />
+    
+        <div class="row g-4 mb-4">
+          <!-- Message -->
+          <div class="col-12">
+            <label for="message" class="form-label text-white">Pourquoi voulez-vous rejoindre ?</label>
+            <textarea id="message" name="message" rows="4" placeholder="Votre message" class="form-control custom-input"></textarea>
+          </div>
         </div>
-        <!-- Ligne 2 -->
-        <div class="form-row">
-          <label for="message">Pourquoi voulez-vous rejoindre ?</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="4"
-            placeholder="Votre message"
-          ></textarea>
-          <!-- element de consigne 4 -->
+    
+        <div class="row g-4 mb-3">
+          <!-- Super-pouvoir -->
+          <div class="col-12">
+            <label for="superpouvoir" class="form-label text-white">Votre super-pouvoir</label>
+            <select id="superpouvoir" name="superpouvoir" class="form-select custom-input">
+              <option value="force_robin">Force tactique (comme Robin)</option>
+              <option value="transformation_changelin">Transformation animale (comme Changelin)</option>
+              <option value="technologie_cyborg">Fusion avec la technologie (comme Cyborg)</option>
+              <option value="laser_starfire">Projectiles d'énergie (comme Starfire)</option>
+              <option value="magie_raven">Magie obscure (comme Raven)</option>
+              <option value="autre">Autre...</option>
+            </select>
+          </div>
         </div>
-        <!-- Ligne 3 -->
-        <div class="form-row">
-          <label for="superpouvoir">Votre super-pouvoir</label>
-          <select id="superpouvoir" name="superpouvoir">
-            <option value="force_robin">Force tactique (comme Robin)</option>
-            <option value="transformation_changelin">
-              Transformation animale (comme Changelin)
-            </option>
-            <option value="technologie_cyborg">
-              Fusion avec la technologie (comme Cyborg)
-            </option>
-            <option value="laser_starfire">
-              Projectiles d'énergie (comme Starfire)
-            </option>
-            <option value="magie_raven">Magie obscure (comme Raven)</option>
-            <option value="autre">Autre...</option>
-          </select>
+    
+        <div class="row g-4 mb-3">
+          <!-- RGPD -->
+          <div class="col-12 d-flex align-items-center">
+            <input type="checkbox" id="rgpd" name="rgpd" class="me-2" required>
+            <label for="rgpd" class="text-white">J'accepte la politique de confidentialité (RGPD)</label>
+          </div>
         </div>
-        <!-- Ligne 4 -->
-        <div class="form-row checkbox-row">
-          <input type="checkbox" id="rgpd" name="rgpd" required />
-          <label for="rgpd"
-            >J'accepte la politique de confidentialité (RGPD)</label
-          >
+    
+        <div class="row">
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary custom-btn">Rejoindre les Titans</button>
+          </div>
         </div>
-        <!-- Ligne 5 -->
-        <div class="form-row">
-          <button type="submit" id="button-join">Rejoindre les Titans</button>
-          <!-- element de consigne 5 -->
-        </div>
-        <!-- Ajout bouton 1 -->
-        <div id="myButton1" class="form-row"></div>
-        <!-- Ajout de la vidéo -->
-        <div id="myVideo" style="display: none"></div>
-        <!-- Ajout bouton 2 -->
-        <div id="myButton2" style="display: none"></div>
       </form>
+    
+      <!-- Vidéo -->
+      <div id="myVideo" class="col-12 my-4">
+        <iframe src="URL_DE_LA_VIDEO" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
     </section>
 
     <!-- Fin du formulaire -->
