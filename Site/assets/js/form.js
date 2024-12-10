@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
   var my_video = document.getElementById("myVideo");
 
   // Création d'une balise <iframe>
-  var video = document.createElement("iframe");
+  var video = document.createElement("video");
 
   // Définit les attributs src de la vidéo
-  video.src = "https://www.youtube.com/embed/FNNlWqYJRT0"; // Lien YouTube
+  video.src = "/assets/video/video.mp4"; // Lien vidéo local
+  video.controls = true;
   video.width = "560"; // Largeur
   video.height = "315"; // Hauteur
-  video.allow = "fullscreen"; // Autorise en grand écran la vidéo
 
   my_video.appendChild(video); // Ajoute la vidéo dans la div
 
@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
     my_video.style.display = "flex";
     video.style.opacity = 1;
     video.style.display = "block";
+    video.play();
+    // Lance la vidéo
 
     // Affiche le bouton 2
     my_button2.style.display = "flex";
@@ -55,18 +57,20 @@ document.addEventListener("DOMContentLoaded", function () {
     button2.style.display = "block";
   }
 
-  // Fonction qui fait disparaître la vidéo en affichant le bouton 1
+  // Fonction qui met en pause la vidéo en affichant le bouton 1
 
   function hide_elements() {
     my_button1.style.display = "flex"; // Affiche le bouton 1
     button1.style.opacity = 1;
     button1.style.display = "block";
+    video.pause();
+    // Met en pause la vidéo
   }
 
   // Récupère le bouton 1/2 et la vidéo
   var button1 = document.getElementById("myButton1").querySelector("button");
   var button2 = document.getElementById("myButton2").querySelector("button");
-  var video = document.getElementById("myVideo").querySelector("iframe");
+  var video = document.getElementById("myVideo").querySelector("video");
 
   // Fonction fade out -> Disparition progressive
 
